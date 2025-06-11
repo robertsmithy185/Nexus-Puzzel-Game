@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nexus Explorer</title>
+  <style>
+    body {
+      background-color: #aaa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    #game-container {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(3, 100px);
+      gap: 2px;
+      margin-top: 20px;
+      background-color: #111;
+      padding: 5px;
+    }
+
+    .tile {
+      width: 100px;
+      height: 100px;
+      background-size: 300px 300px;
+      cursor: pointer;
+    }
+
+    .empty {
+      background: #aaa;
+      cursor: default;
+    }
+
+    #win-screen {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #win-screen img {
+      width: 300px;
+      height: 300px;
+    }
+
+    #win-screen h2 {
+      color: green;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Nexus Explorer</h1>
+  <div id="game-container"></div>
+
+  <div id="win-screen">
+    <h2>🎉 Puzzle Selesai!</h2>
+    <img src="assets/cube.png" alt="Nexus Logo">
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
